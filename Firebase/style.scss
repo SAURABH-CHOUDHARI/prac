@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(14px, 1vw, 18px);
+}
+
+
+main {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    nav {
+        position: fixed;
+        width: 100%;
+        height: 3.2rem;
+        padding: 0 1.5rem;
+        display: flex;
+        justify-content: space-between; 
+        background: #FFFFFF;
+
+        .left {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+
+            .logo {
+                img {
+                    width: 7.5rem;
+                    height: 100%;
+                }
+            }
+
+            ul {
+                padding: 0 5rem;
+                display: flex;
+                list-style: none;
+                gap: 3rem;
+                overflow: hidden;
+                opacity: 0.6;
+                font-size: 0.9rem;
+                font-weight: 700;
+                
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+
+            form {
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                input {
+                    display: flex;
+                    height: 70%;
+                    border: none;
+                    outline: none;
+                    border-radius: 0.2rem;
+                    background: #F1F3F4;
+                    font-size: 1rem;
+                    padding: 0.5rem 1rem;
+                }
+            }
+
+            .moon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 1rem;
+
+                img {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    opacity: 0.7;
+                }
+            }
+
+            .buttons {
+                display: flex;
+                gap: 1rem;
+                padding: 0 1rem 0 0;
+                align-items: center;
+
+                button {
+                    display: flex;
+                    padding: 0.6rem 2rem;
+                    border-radius: 0.3rem;
+                    border: 1px solid gray;
+                    background: #FFFFFF;
+
+                    &:hover {
+                        cursor: pointer;
+                        background: #F1F3F4;
+                    }
+                }
+
+                .go {
+                    display: flex;
+                    padding: 0.6rem 0.5rem;
+                    border-radius: 0.3rem;
+                    border: none;
+                    background: #FFFFFF;
+                    color: #1A73E8;
+                    font-weight: 700;
+
+                    &:hover {
+                        cursor: pointer;
+                        background: #F1F3F4;
+                    }
+                }
+            }
+
+            img {
+                height: 1rem;
+                width: 1rem;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width:600px) {
+html{
+    font-size: 14px;
+}
+    main {
+        nav {
+            .left{
+                overflow: ;
+                ul{
+                    display: none;
+                }
+            }
+            .right{
+                form{
+                    display: none;
+                    input{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
