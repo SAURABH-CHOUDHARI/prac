@@ -1,0 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  height: 400px;
+  width: 300px;
+  background: cyan;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img .like {
+  height: 50px;
+  width: 50px;
+  background: crimson;
+  border-radius: 50%;
+  transition: ease-out all 0.3s;
+}/*# sourceMappingURL=style.css.map */

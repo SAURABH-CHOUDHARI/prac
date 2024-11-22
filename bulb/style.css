@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+body .box {
+  height: 300px;
+  width: 300px;
+  border: 2px solid black;
+  background: white;
+  transition: ease all 0.3s;
+}
+body .box:active {
+  scale: 0.9;
+}/*# sourceMappingURL=style.css.map */
