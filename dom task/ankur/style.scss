@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dclock {
+    display: flex;
+    gap: 2rem;
+    background: burlywood;
+    padding: 2rem;
+
+    span {
+        font-size: 4rem;
+    }
+}
+
+.hour {
+    width: 10rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+.min {
+    width: 10rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+.sec {
+    width: 10rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+h1{
+    color: white;
+}
