@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins";
+  font-weight: 200;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #55A8FD;
+  border-radius: 1rem;
+  background: white;
+}
+button:hover {
+  cursor: pointer;
+}
+button:empty {
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  background-color: aqua;
+  padding: 5rem 0;
+}
+.container .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25rem;
+  background: white;
+  padding: 1.5rem 0 0 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.container .card .rate {
+  justify-content: space-between;
+  display: flex;
+  padding: 0 2rem;
+}
+.container .card .rate button {
+  background: #56D48F;
+  color: white;
+  border: none;
+}
+.container .card .image {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0rem 2rem;
+}
+.container .card .image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  background-color: black;
+  box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.1);
+}
+.container .card .name {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem 0 2rem;
+}
+.container .card .occupation {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+}
+.container .card .occupation h4 {
+  opacity: 0.5;
+}
+.container .card .profile {
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+}
+.container .card .skills {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 2rem;
+}
+.container .card p {
+  text-align: center;
+  padding: 1rem 2rem;
+}
+.container .card .viewpro {
+  display: flex;
+  justify-content: center;
+}
+.container .card .viewpro h2 {
+  padding: 1.5rem 0;
+  font-size: 1rem;
+  border-top: 2px solid #55A8FD;
+}
+.container .card .viewpro:hover {
+  color: white;
+  cursor: pointer;
+  background: #55A8FD;
+}/*# sourceMappingURL=style.css.map */
