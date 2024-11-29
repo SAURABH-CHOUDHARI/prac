@@ -64,62 +64,87 @@ let data = [
 
 let story = document.querySelector(".story");
 let page = document.querySelector(".page");
+let poster = document.querySelector('.page .post')
+
 let storyimg = "";
-let post = "";
-data.forEach((elem)=>{
-    storyimg +=  `<div class="storyitem">
-                <img src="${elem.userprofile}" alt="">
-                <span>${elem.username}</span>
-            </div>`
-    post +=  `<div class="post">
-    <div class="userinfo">
-        <div class="user">
-            <img src="${elem.userprofile}" alt="">
-            <h6 class="name">${elem.username}</h6>
+
+function posts() {
+    let post = "";
+    data.forEach((elem, idx) => {
+        storyimg += `<div class="storyitem" >
+                    <img src="${elem.userprofile}" alt="">
+                    <span>${elem.username}</span>
+                </div>`
+        post += `<div class="post">
+        <div class="userinfo">
+            <div class="user">
+                <img src="${elem.userprofile}" alt="" >
+                <h6 class="name">${elem.username}</h6>
+            </div>
+            <img src="https://img.icons8.com/ios-glyphs/30/menu-2.png" alt="" id"${idx + 10}">
         </div>
-        <img src="https://img.icons8.com/ios-glyphs/30/menu-2.png" alt="">
-    </div>
-    <img src="${elem.userPost}" alt="">
-    <div class="likeshare">
-        <div class="button">
-                        <div class="like">
-                            <img src="https://img.icons8.com/ios/50/hearts--v1.png" alt="">
-                            <span>${elem.likeCount}</span>
+        <img src="${elem.userPost}" alt="">
+        <div class="likeshare">
+            <div class="button">
+                            <div class="${elem.like ? "like" : "nolike"}">
+                                <img src="https://img.icons8.com/ios/50/hearts--v1.png" alt="" id="${idx}">
+                                <span>${elem.likeCount}</span>
+                            </div>
+                            <div class="comment">
+                                <img src="https://cdn0.iconfinder.com/data/icons/social-media-logo-4/32/Social_Media_instagram_comment-512.png"
+                                    alt="">
+                                <span>${elem.commentCount}</span>
+                            </div>
+                            <div class="share">
+                                <img src="https://cdn2.iconfinder.com/data/icons/instagram-17/32/11-share-512.png" alt="">
+                                <span>${elem.shareCount}</span>
+                            </div>
                         </div>
-                        <div class="comment">
-                            <img src="https://cdn0.iconfinder.com/data/icons/social-media-logo-4/32/Social_Media_instagram_comment-512.png"
-                                alt="">
-                            <span>${elem.commentCount}</span>
-                        </div>
-                        <div class="share">
-                            <img src="https://cdn2.iconfinder.com/data/icons/instagram-17/32/11-share-512.png" alt="">
-                            <span>${elem.shareCount}</span>
-                        </div>
-                    </div>
-        <img src="https://cdn0.iconfinder.com/data/icons/social-media-logo-4/32/Social_Media_instagram_save_save_instagram-512.png" alt="" class="save">
-    </div>
-    <h5 class="likecount">${elem.likeCount} likes</h5>
-    <p class="cap"><span>${elem.username}</span>${elem.caption}</p>
-    <h6 class="timestamp">${elem.timeAgoUploaded} hours ago</h6>
-</div>`
-})
-page.innerHTML = post;
-story.innerHTML = storyimg;
+            <img src="https://cdn0.iconfinder.com/data/icons/social-media-logo-4/32/Social_Media_instagram_save_save_instagram-512.png" alt="" class="save">
+        </div>
+        <h5 class="likecount">${elem.likeCount} likes</h5>
+        <p class="cap"><span>${elem.username}</span> ${elem.caption}</p>
+        <h6 class="timestamp">${elem.timeAgoUploaded} hours ago</h6>
+    </div>`
+    })
+    page.innerHTML = post;
+    story.innerHTML = storyimg;
+}
+posts();
 
 let modal = document.querySelector(".modal");
 let modalimg = document.querySelector(".modal .expand")
 let stories = document.querySelectorAll(".storyitem img");
 let close = document.querySelector(".modal .close")
+let bar = document.querySelector(".modal .bar")
 
-stories.forEach(story =>{
-    story.addEventListener("click", function(){
+stories.forEach(story => {
+    story.addEventListener("click", function () {
         modal.style.display = 'flex';
         modalimg.src = story.src;
         modal.style.position = "fixed";
+        setTimeout(function () {
+            modal.style.display = "none";
+            modalimg.src = "";
+        }, 6000)
     })
-
-} )
-close.addEventListener("click", function(){
-        modal.style.display = "none";
-        modalimg.src = "";
 })
+close.addEventListener("click", function () {
+    modal.style.display = "none";
+    modalimg.src = "";
+    bar.style.width = '0%'
+})
+
+page.addEventListener("click", function (dets) {
+    if (!data[dets.target.id].like) {
+        data[dets.target.id].likeCount++;
+        data[dets.target.id].like = true;
+    }
+    else{
+        data[dets.target.id].likeCount--;
+        data[dets.target.id].like = false;
+    }
+    posts();
+});
+
+

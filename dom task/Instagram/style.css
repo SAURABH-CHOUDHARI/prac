@@ -13,7 +13,7 @@ body {
 
 @media (max-width: 600px) {
   .modal {
-    display: flex;
+    display: none;
     height: 100%;
     width: 100%;
     align-items: center;
@@ -21,6 +21,16 @@ body {
     padding: 1rem;
     top: 0;
     background: white;
+  }
+  .modal .bar {
+    height: 0.5rem;
+    width: 0%;
+    background: crimson;
+    border-radius: 5rem;
+    position: absolute;
+    top: 0.5%;
+    right: 0%;
+    transition: all ease-in-out 0.3s;
   }
   .modal .close {
     width: 60px;
@@ -41,7 +51,7 @@ body {
     display: flex;
     justify-content: space-between;
     overflow: hidden;
-    padding: 0 0.5rem;
+    padding: 1rem 0.5rem 0 0.5rem;
   }
   main .top .logo {
     align-items: center;
@@ -140,6 +150,16 @@ body {
     width: 30px;
   }
   main .page .post .likeshare .button .like span {
+    font-size: 0.8rem;
+  }
+  main .page .post .likeshare .button .nolike {
+    display: flex;
+    align-items: center;
+  }
+  main .page .post .likeshare .button .nolike img {
+    width: 30px;
+  }
+  main .page .post .likeshare .button .nolike span {
     font-size: 0.8rem;
   }
   main .page .post .likeshare .button .comment {

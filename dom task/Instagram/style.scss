@@ -13,7 +13,7 @@ body {
 
 @media (max-width: 600px) {
     .modal {
-        display: flex;
+        display: none;
         height: 100%;
         width: 100%;
         align-items: center;
@@ -21,6 +21,17 @@ body {
         padding: 1rem;
         top: 0;
         background: white;
+        .bar{
+            height: 0.5rem;
+            width: 0%;
+            background: crimson;
+            border-radius: 5rem;
+            position: absolute;
+            top: 0.5%;
+            right: 0%;
+            transition: all ease-in-out .3s;
+            
+        }
         
         .close {
             width: 60px;
@@ -31,7 +42,6 @@ body {
         
         .expand {
             width: 100%;
-
         }
     }
 
@@ -45,7 +55,7 @@ body {
             display: flex;
             justify-content: space-between;
             overflow: hidden;
-            padding: 0 0.5rem;
+            padding: 1rem 0.5rem 0 0.5rem;
 
             .logo {
                 align-items: center;
@@ -154,6 +164,19 @@ body {
                             display: flex;
                             align-items: center;
 
+                            img {
+                                width: 30px;
+
+                            }
+
+                            span {
+                                font-size: 0.8rem;
+                            }
+                        }
+                        .nolike {
+                            display: flex;
+                            align-items: center;
+                        
                             img {
                                 width: 30px;
 
