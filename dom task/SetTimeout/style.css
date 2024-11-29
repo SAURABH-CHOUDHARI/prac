@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent {
+  height: 200px;
+  width: 700px;
+  padding: 4rem;
+  background-color: white;
+  border-radius: 25px;
+}
+.parent .progress {
+  height: 30px;
+  width: 100%;
+  border-radius: 25px;
+  background: gainsboro;
+  margin-bottom: 20px;
+}
+.parent .progress .grow {
+  width: 0%;
+  height: 100%;
+  background: green;
+  border-radius: 25px;
+}
+.parent .download {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.parent .download h5 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.parent .download button {
+  padding: 10px 20px;
+  background-color: green;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 600;
+}
+.parent .download button:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

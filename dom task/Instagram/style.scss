@@ -1,0 +1,228 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'DM Sans';
+}
+
+@media (max-width: 600px) {
+    .modal {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        position: relative;
+        padding: 1rem;
+        top: 0;
+        background: white;
+        
+        .close {
+            width: 60px;
+            right: 3%;
+            top: 1%;
+            position: absolute;
+        }
+        
+        .expand {
+            width: 100%;
+
+        }
+    }
+
+    main {
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+        .top {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            padding: 0 0.5rem;
+
+            .logo {
+                align-items: center;
+                display: flex;
+
+                img {
+                    width: 7rem;
+
+                }
+            }
+
+            .noti {
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 30px;
+                }
+            }
+        }
+
+        .story {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            gap: 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+            scrollbar-shadow-color: none;
+
+            .storyitem {
+                img {
+                    height: 80px;
+                    width: 80px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    object-position: center;
+                    border: 2px crimson solid;
+                }
+
+                span {
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                }
+
+            }
+        }
+
+        .page {
+            height: 100%;
+            width: 100%;
+
+            .post {
+                width: 100%;
+                padding: 0.5rem 0;
+                overflow: scroll;
+
+                .userinfo {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0.5rem 1rem;
+                    align-items: center;
+
+                    .user {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+
+                        img {
+                            height: 50px;
+                            width: 50px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+
+                        .name {
+                            font-size: 0.8rem;
+                            font-weight: 600;
+                            padding: 0 0.5rem;
+                        }
+                    }
+
+                    img {
+                        width: 1rem;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+                .likeshare {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0.2rem 1rem;
+                    align-items: center;
+
+                    .button {
+                        display: flex;
+                        gap: 0.5rem;
+                        align-items: center;
+
+                        .like {
+                            display: flex;
+                            align-items: center;
+
+                            img {
+                                width: 30px;
+
+                            }
+
+                            span {
+                                font-size: 0.8rem;
+                            }
+                        }
+
+                        .comment {
+                            display: flex;
+                            align-items: center;
+
+                            img {
+                                width: 30px;
+                            }
+
+                            span {
+                                font-size: 0.8rem;
+                            }
+
+                        }
+
+                        .share {
+                            display: flex;
+                            align-items: center;
+
+                            img {
+                                width: 26px;
+                            }
+
+                            span {
+                                font-size: 0.8rem;
+                            }
+
+                        }
+                    }
+
+                    .save {
+                        width: 20px;
+                    }
+                }
+
+                .likecount {
+                    padding: 0 1rem;
+                    font-size: 0.8rem;
+                }
+
+                .cap {
+                    padding: 0 1rem;
+                    font-size: 0.8rem;
+
+                    span {
+                        font-size: 0.8rem;
+                        font-weight: 800;
+                    }
+                }
+
+                .timestamp {
+                    padding: 0 1rem;
+                    font-weight: 400;
+                    opacity: 0.9;
+                    font-size: 0.7rem;
+                }
+
+            }
+        }
+
+    }
+
+}
