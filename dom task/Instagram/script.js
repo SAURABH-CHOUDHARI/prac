@@ -64,11 +64,10 @@ let data = [
 
 let story = document.querySelector(".story");
 let page = document.querySelector(".page");
-let poster = document.querySelector('.page .post')
 
-let storyimg = "";
 
 function posts() {
+    let storyimg = "";
     let post = "";
     data.forEach((elem, idx) => {
         storyimg += `<div class="storyitem" >
@@ -83,12 +82,17 @@ function posts() {
             </div>
             <img src="https://img.icons8.com/ios-glyphs/30/menu-2.png" alt="" id"${idx + 10}">
         </div>
-        <img src="${elem.userPost}" alt="">
+        <div class="imgpop">
+        <span class="pop">
+        <i class="ri-heart-3-fill"></i>
+        </span>
+        <img src="${elem.userPost}" class="mkc" alt="">
+        </div>
         <div class="likeshare">
             <div class="button">
-                            <div class="${elem.like ? "like" : "nolike"}">
-                                <img src="https://img.icons8.com/ios/50/hearts--v1.png" alt="" id="${idx}">
-                                <span>${elem.likeCount}</span>
+                            <div class = "like">
+                            <span id="${idx}">${elem.like ? ' <i id="liked" class="ri-heart-3-fill" ></i> ' : ' <i id="noliked" class="ri-heart-3-line" ></i> '}
+                                <h5>${elem.likeCount}</h5>
                             </div>
                             <div class="comment">
                                 <img src="https://cdn0.iconfinder.com/data/icons/social-media-logo-4/32/Social_Media_instagram_comment-512.png"
@@ -114,37 +118,52 @@ posts();
 
 let modal = document.querySelector(".modal");
 let modalimg = document.querySelector(".modal .expand")
-let stories = document.querySelectorAll(".storyitem img");
 let close = document.querySelector(".modal .close")
 let bar = document.querySelector(".modal .bar")
 
-stories.forEach(story => {
-    story.addEventListener("click", function () {
-        modal.style.display = 'flex';
-        modalimg.src = story.src;
-        modal.style.position = "fixed";
-        setTimeout(function () {
-            modal.style.display = "none";
-            modalimg.src = "";
-        }, 6000)
-    })
-})
+// 
+page.addEventListener("click", function (event) {
+    // Check if the clicked element has a valid ID
+    if (event.target.id && data[event.target.id]) {
+        // Toggle like status and update like count
+        const post = data[event.target.id];
+        post.like = !post.like;
+        post.likeCount += post.like ? 1 : -1;
+        
+        // Re-render posts
+        posts();
+    }
+});
+
+page.addEventListener("dblclick", function(detss){
+
+    let targetElement = detss.target;
+    let postElement = targetElement.closest('.post');
+    if (!postElement) return;
+    
+    let likeButton = postElement.querySelector('.likeshare .button .like span');
+    if (!likeButton) return;
+    
+    let index = parseInt(likeButton.id);
+    
+    // Toggle like status and update like count
+    data[index].like = !data[index].like;
+    data[index].likeCount += data[index].like ? 1 : -1;
+
+    posts();
+});
+
 close.addEventListener("click", function () {
     modal.style.display = "none";
     modalimg.src = "";
     bar.style.width = '0%'
 })
 
-page.addEventListener("click", function (dets) {
-    if (!data[dets.target.id].like) {
-        data[dets.target.id].likeCount++;
-        data[dets.target.id].like = true;
-    }
-    else{
-        data[dets.target.id].likeCount--;
-        data[dets.target.id].like = false;
-    }
-    posts();
-});
+story.addEventListener("click",function(detsss){
+    let savess = detsss.target.src ;
+    modal.style.display = "flex";
+    modalimg.src =savess;
+    modal.style.position = "fixed"; 
+})
 
 

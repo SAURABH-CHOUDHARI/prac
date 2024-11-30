@@ -126,7 +126,24 @@ body {
   main .page .post .userinfo img {
     width: 1rem;
   }
-  main .page .post img {
+  main .page .post .imgpop {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  main .page .post .imgpop .pop {
+    display: none;
+    position: absolute;
+    font-size: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(3);
+    color: red;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  main .page .post .imgpop .mkc {
+    height: 100%;
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
@@ -144,23 +161,24 @@ body {
   }
   main .page .post .likeshare .button .like {
     display: flex;
-    align-items: center;
-  }
-  main .page .post .likeshare .button .like img {
-    width: 30px;
   }
   main .page .post .likeshare .button .like span {
-    font-size: 0.8rem;
-  }
-  main .page .post .likeshare .button .nolike {
     display: flex;
     align-items: center;
   }
-  main .page .post .likeshare .button .nolike img {
-    width: 30px;
+  main .page .post .likeshare .button .like span #liked {
+    pointer-events: none;
+    color: crimson;
+    font-size: 30px;
   }
-  main .page .post .likeshare .button .nolike span {
+  main .page .post .likeshare .button .like span #noliked {
+    pointer-events: none;
+    color: black;
+    font-size: 30px;
+  }
+  main .page .post .likeshare .button .like span h5 {
     font-size: 0.8rem;
+    font-weight: 400;
   }
   main .page .post .likeshare .button .comment {
     display: flex;

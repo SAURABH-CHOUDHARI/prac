@@ -21,7 +21,8 @@ body {
         padding: 1rem;
         top: 0;
         background: white;
-        .bar{
+
+        .bar {
             height: 0.5rem;
             width: 0%;
             background: crimson;
@@ -30,16 +31,16 @@ body {
             top: 0.5%;
             right: 0%;
             transition: all ease-in-out .3s;
-            
+
         }
-        
+
         .close {
             width: 60px;
             right: 3%;
             top: 1%;
             position: absolute;
         }
-        
+
         .expand {
             width: 100%;
         }
@@ -143,10 +144,26 @@ body {
                         width: 1rem;
                     }
                 }
-
-                img {
+                .imgpop{
+                    height: 100%;
                     width: 100%;
-                    object-fit: cover;
+                    position: relative;
+                    .pop{
+                        display: none;
+                        position: absolute;
+                        font-size: 30px;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%) scale(3);
+                        color: red;
+                        opacity: 0.7;
+                        pointer-events: none;
+                    }
+                    .mkc {
+                        height: 100%;
+                        width: 100%;   
+                        object-fit: cover;
+                    }
                 }
 
                 .likeshare {
@@ -162,28 +179,27 @@ body {
 
                         .like {
                             display: flex;
-                            align-items: center;
-
-                            img {
-                                width: 30px;
-
-                            }
 
                             span {
-                                font-size: 0.8rem;
-                            }
-                        }
-                        .nolike {
-                            display: flex;
-                            align-items: center;
-                        
-                            img {
-                                width: 30px;
+                                display: flex;
+                                align-items: center;
 
-                            }
+                                #liked {
+                                    pointer-events: none;
+                                    color: crimson;
+                                    font-size: 30px;
+                                }
 
-                            span {
-                                font-size: 0.8rem;
+                                #noliked {
+                                    pointer-events: none;
+                                    color: black;
+                                    font-size: 30px;
+                                }
+
+                                h5 {
+                                    font-size: 0.8rem;
+                                    font-weight: 400;
+                                }
                             }
                         }
 
