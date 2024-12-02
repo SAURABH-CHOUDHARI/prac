@@ -130,17 +130,18 @@ body {
     height: 100%;
     width: 100%;
     position: relative;
+    overflow: hidden;
   }
   main .page .post .imgpop .pop {
-    display: none;
     position: absolute;
-    font-size: 30px;
+    font-size: 75px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(3);
-    color: red;
-    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1);
+    color: #fff;
+    opacity: 0.8;
     pointer-events: none;
+    transition: all ease 0.4s;
   }
   main .page .post .imgpop .mkc {
     height: 100%;

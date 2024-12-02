@@ -64,8 +64,11 @@ let data = [
 
 let story = document.querySelector(".story");
 let page = document.querySelector(".page");
-
-
+let modal = document.querySelector(".modal");
+let modalimg = document.querySelector(".modal .expand")
+let close = document.querySelector(".modal .close")
+let bar = document.querySelector(".modal .bar")
+//Post Function
 function posts() {
     let storyimg = "";
     let post = "";
@@ -116,12 +119,8 @@ function posts() {
 }
 posts();
 
-let modal = document.querySelector(".modal");
-let modalimg = document.querySelector(".modal .expand")
-let close = document.querySelector(".modal .close")
-let bar = document.querySelector(".modal .bar")
 
-// 
+//EventListeners 
 page.addEventListener("click", function (event) {
     // Check if the clicked element has a valid ID
     if (event.target.id && data[event.target.id]) {
@@ -143,12 +142,12 @@ page.addEventListener("dblclick", function(detss){
     
     let likeButton = postElement.querySelector('.likeshare .button .like span');
     if (!likeButton) return;
-    
     let index = parseInt(likeButton.id);
     
     // Toggle like status and update like count
     data[index].like = !data[index].like;
     data[index].likeCount += data[index].like ? 1 : -1;
+
 
     posts();
 });
@@ -161,9 +160,11 @@ close.addEventListener("click", function () {
 
 story.addEventListener("click",function(detsss){
     let savess = detsss.target.src ;
-    modal.style.display = "flex";
-    modalimg.src =savess;
-    modal.style.position = "fixed"; 
+    if(detsss.target.src){
+        modal.style.display = "flex";
+        modalimg.src =savess;
+        modal.style.position = "fixed"; 
+    }
 })
 
 
