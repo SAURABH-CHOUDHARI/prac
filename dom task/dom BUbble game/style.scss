@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'VT323';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.scoreboard{
+    width: 700px;
+    height: 150px;
+    border: 30px solid burlywood;
+    background: black;
+    display: flex;
+    h4{
+        font-size: 1.5rem;
+        color: white;
+    }
+    .target{
+        width: 33.33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: dotted green 4px;
+        h1{
+            color: green;
+        }
+    }
+    .time{
+        width: 33.33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: dotted green 4px;
+        h1{
+            color: green;
+        }
+    }
+    .score{
+        width: 33.33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h1{
+            color: green;
+        }
+    }
+
+}
+.Bubbles{
+    width: 700px;
+    height: 750px;
+    border: 30px solid burlywood;
+    background: black;
+    padding: 1rem;
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    h1{
+        color: white;
+        font-size: 4rem;
+    }
+    h2{
+        color: white;
+        font-size: 3rem;
+    }
+        .bubble{    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+            background: white;
+            opacity: 0.8;
+            h1{
+                color: green;
+                font-size: 3rem;
+                pointer-events: none;
+            }
+
+            &:hover{
+                background: pink;
+                cursor: pointer;
+            }
+            &:active{
+                scale: 0.95;
+            }
+        }
+}

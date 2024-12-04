@@ -22,6 +22,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 2px 2px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 .circle .twelve {
   display: flex;
@@ -30,7 +31,12 @@ body {
 .circle .oneoneone {
   display: flex;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 70px;
+}
+.circle .tentwo {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
 }
 .circle .sixthree {
   display: flex;
@@ -39,7 +45,12 @@ body {
 .circle .eightfour {
   display: flex;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 20px;
+}
+.circle .sevenfive {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 70px;
 }
 .circle .six {
   display: flex;

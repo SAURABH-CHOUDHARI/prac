@@ -12,8 +12,7 @@ let bugs = [
 ]
 btn.addEventListener("click", ()=>{
     let a = document.createElement('img')
-    let ran = Math.floor(Math.random()*bugs.length)
-    a.setAttribute('src', bugs[ran])
+    a.setAttribute('src', bugs[Math.floor(Math.random()*bugs.length)])
     a.style.left = `${Math.floor(Math.random()*100)}%`
     a.style.top = `${Math.floor(Math.random()*100)}%`
     a.style.rotate = `${Math.floor(Math.random()*360)}deg`
