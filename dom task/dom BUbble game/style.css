@@ -8,7 +8,7 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-family: "VT323";
+  font-family: Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,7 +60,7 @@ body {
   width: 700px;
   height: 750px;
   border: 30px solid burlywood;
-  background: black;
+  background: linear-gradient(to bottom, #FFC0CB, white);
   padding: 1rem;
   gap: 1rem;
   display: flex;
@@ -69,30 +69,32 @@ body {
   justify-content: space-evenly;
 }
 .Bubbles h1 {
-  color: white;
+  color: black;
   font-size: 4rem;
 }
 .Bubbles h2 {
-  color: white;
+  color: black;
   font-size: 3rem;
 }
 .Bubbles .bubble {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
-  background: white;
+  background: burlywood;
   opacity: 0.8;
 }
 .Bubbles .bubble h1 {
-  color: green;
+  color: white;
   font-size: 3rem;
   pointer-events: none;
 }
 .Bubbles .bubble:hover {
-  background: pink;
+  color: white;
+  background: red;
   cursor: pointer;
 }
 .Bubbles .bubble:active {
