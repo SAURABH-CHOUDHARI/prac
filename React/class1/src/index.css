@@ -1,0 +1,23 @@
+body{
+    background: #E4E4E4;
+}
+.animate {
+    
+    animation: spin 5s linear infinite;
+    
+}
+.scrollbar::-webkit-scrollbar{
+    display: none;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    
+    to {
+        transform: rotate(360deg);
+    }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
