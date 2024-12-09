@@ -1,5 +1,6 @@
 body{
     background: #E4E4E4;
+    overflow-x: hidden;
 }
 .animate {
     
