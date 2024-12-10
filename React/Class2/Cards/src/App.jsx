@@ -77,7 +77,7 @@ const App = () => {
     }
   ];
   return (
-    <div className="flex px-10 py-10 w-full gap-14 flex-wrap justify-center bg-zinc-900">
+    <div className="flex px-10 py-10 w-full gap-14 flex-wrap justify-center bg-zinc-800">
       {arr.map((obj, idx) => (
         <Card key={idx} id={obj} />
       ))}

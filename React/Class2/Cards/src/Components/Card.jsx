@@ -8,7 +8,7 @@ const Card = (arr) => {
                     <h4 className="text-sm">{arr.id.date}</h4>
                     <h5 className="text-xs">{arr.id.time}</h5>
                 </div>
-                <div className="hole h-10 w-10 rounded-full bg-white absolute top-[5%] left-[50%] -translate-x-[50%] -translate-y-[50%] shadow-inner"></div>
+                <div className="hole h-10 w-10 rounded-full bg-zinc-800 absolute top-[5%] left-[50%] -translate-x-[50%] -translate-y-[50%] shadow-inner"></div>
                 <div id="City">{arr.id.city}</div>
             </div>
             <div className="w-4/5">
