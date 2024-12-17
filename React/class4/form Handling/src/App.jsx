@@ -1,5 +1,7 @@
 import { useState } from "react"
 import Card from "./Components/Card"
+import { Switch } from "@/components/ui/switch"
+
 
 const App = () => {
   const [arr, setArr] = useState([])
@@ -57,6 +59,8 @@ const App = () => {
             }} type="text" placeholder='Img' value={img} required id="image"
               className="border-solid border-2 border-black h-10 rounded-2xl "
             />
+            <Switch />
+
           </div>
           <button className="border-solid border-2 border-black w-40 py-5 rounded-3xl bg-green-400">submit</button>
         </form>
