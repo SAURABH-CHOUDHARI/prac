@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 text-white flex flex-col items-center py-6">
+      <div className="min-h-screen bg-gradient-to-br from-zinc-400 to-red-400 text-white flex flex-col items-center pt-6">
         <header className="text-center mb-6">
           <h1 className="text-4xl font-extrabold drop-shadow-md">
             Memory Game
