@@ -13,7 +13,7 @@ const Cart = ({ cart, updateQuantity, removeFromCart }) => {
                     >
                         {/* image */}
                         <div className="w-36 rounded-lg h-36 overflow-hidden">
-                            <img className="w-full object-cover h-full " src={item.img} alt="" />
+                            <img className="w-full object-cover h-full " src={item.image} alt="" />
                         </div>
                         {/*  text and buttons */}
                         <div className="flex  items-center">
