@@ -16,10 +16,10 @@ const App = () => {
   return (
     <div className='flex '>
       <Form setSubmittedData={setSubmittedData} submittedData={submittedData}/>
-      <div className='flex flex-col w-full px-10'>
+      <div className='flex flex-col w-full px-10 bg-slate-900 grid-rows-4 text-white'>
+        <h1 className=' mt-5 text-5xl font-bold animate-bounce'>Contact List</h1>
       {submittedData.length === 0 ? (
   <div className='p-10'>
-    <h1 className='text-5xl font-bold'>Contact List</h1>
     <p className='text-lg mt-5 ml-5'>No Contact added yet</p>
   </div>
 ) : (

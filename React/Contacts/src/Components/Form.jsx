@@ -23,12 +23,12 @@ function Form({setSubmittedData, submittedData}) {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 w-[96rem] flex items-center justify-center">
-            <div className="bg-white shadow-lg rounded-lg p-8 w-full  ">
-                <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">Contact Form</h2>
+        <div className="min-h-screen  w-[96rem] flex items-center bg-slate-950 text-white border-white border-2  justify-center">
+            <div className="bg-white shadow-lg rounded-lg p-8 w-full bg-slate-950 border-y-2 border-white">
+                <h2 className="text-2xl font-bold text-center mb-6">Contact Form</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                        <label htmlFor="name" className="block text-sm font-medium mb-1">
                             Name
                         </label>
                         <input
@@ -43,7 +43,7 @@ function Form({setSubmittedData, submittedData}) {
                         />
                     </div>
                     <div>
-                        <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                        <label htmlFor="company" className="block text-sm font-medium mb-1">
                             Company
                         </label>
                         <input
@@ -58,7 +58,7 @@ function Form({setSubmittedData, submittedData}) {
                         />
                     </div>
                     <div>
-                        <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-1">
+                        <label htmlFor="phoneNumber" className="block text-sm font-medium mb-1">
                             Phone Number
                         </label>
                         <input
@@ -81,7 +81,7 @@ function Form({setSubmittedData, submittedData}) {
                             onChange={handleChange}
                             className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                         />
-                        <label htmlFor="favorite" className="ml-2 block text-sm text-gray-700">
+                        <label htmlFor="favorite" className="ml-2 block text-sm">
                             Favorite
                         </label>
                     </div>

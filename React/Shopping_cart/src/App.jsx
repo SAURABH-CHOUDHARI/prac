@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Product from "./components/Product.jsx";
 import Cart from "./components/Cart.jsx";
 import Navbar from "./components/Navbar.jsx";
@@ -46,43 +46,43 @@ const App = () => {
   const [openClose, setOpenClose] = useState(false)
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([])
-  
+
 
   const toggleCart = () => {
     setOpenClose(!openClose)
   }
 
-  const getProducts = async() => {
-    let response = await axios.get('https://fakestoreapi.com/products') 
-    setProducts(response.data)
+  const getProducts = async () => {
+    let response = await axios.get('https://fakestoreapi.in/api/products')
+    setProducts(response.data.products)
   }
   useEffect(() => {
     getProducts();
-  }, []);  // Added useEffect to prevent infinite calls
+  }, []);
 
-  // Add to Cart Functionality
+
   const addToCart = (product) => {
     setCart((prevCart) => {
       const existingProduct = prevCart.find((item) => item.id === product.id);
       setOpenClose(true)
 
-        // Update the isInCart status for the product
-    
-      
+
+
+
       if (existingProduct) {
-        // Increase quantity if product exists
+
         return prevCart.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 } 
+            ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       } else {
-        // Add new product to cart
+
         return [...prevCart, { ...product, quantity: 1 }];
       }
     });
-    setProducts(prevProducts => 
-      prevProducts.map(prod => 
+    setProducts(prevProducts =>
+      prevProducts.map(prod =>
         prod.id === product.id
           ? { ...prod, isInCart: true }
           : prod
@@ -91,28 +91,29 @@ const App = () => {
 
   };
 
-  // Update Quantity Functionality
+
   const updateQuantity = (id, quantity) => {
-      setCart((prevCart) =>
-        prevCart.map((item) =>
-          item.id === id ? { ...item, quantity: Math.max(quantity, 1) } : item
-        )
-      );
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === id ? { ...item, quantity: Math.max(quantity, 1) } : item
+      )
+    );
   };
 
-  // Remove from Cart Functionality
-  const removeFromCart = (id) => {
+
+  const  removeFromCart = async (id) => {
+    
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
-    setProducts((prevProducts) => 
-      prevProducts.map((prod) => 
-        prod.id === id 
+    setProducts((prevProducts) =>
+      prevProducts.map((prod) =>
+        prod.id === id
           ? { ...prod, isInCart: false }
           : prod
       )
     );
   };
 
-  // Calculate Total Price
+
   const totalPrice = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
@@ -121,24 +122,28 @@ const App = () => {
   return (
     <>
 
+
+
       <Navbar toggle={toggleCart} />
+      <div className="w-screen px-10  flex ">
+        <div className="w-screen md:h-[90vh] overflow-y-scroll scrollbar  mr-2">
 
-
-      <div className="w-screen px-10 py-4 h-screen overflow-x-hidden flex">
-        <div className="md:w-[90rem]">
-
-          <h1 className="text-2xl font-bold mb-4">Product Shop</h1>
+          {/* <h1 className="text-4xl font-bold mb-4 text-slate-800 w-full text-center ">SHOP</h1> */}
           <Product products={products} addToCart={addToCart} />
         </div>
-        {openClose ? <div>
+  
+        {openClose ? 
+        <div className="h-[90vh] overflow-y-scroll scrollbar w-80 flex items-center flex-col border-2 border-zinc-700">
+          <h2 className="text-4xl font-bold  w-full text-center">Cart</h2>
+          <h2 className="text-xl font-semibold  border-b-2 border-zinc-700 w-full text-center">Total Price: ₹{totalPrice.toFixed(2)}</h2>
           <Cart
             cart={cart}
             updateQuantity={updateQuantity}
             removeFromCart={removeFromCart}
-          />
-          <h2 className="text-xl font-semibold mt-4">Total Price: ₹{totalPrice.toFixed(2)}</h2>
-        </div> : ''}
-        
+            />
+            </div> 
+          : ''}
+
 
       </div>
     </>
