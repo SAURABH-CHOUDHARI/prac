@@ -1,9 +1,7 @@
-import React, { useContext } from 'react'
 
-const one = ({data}) => {
-    const [dataa] = useContext(dataa)
+const one = () => {
     return (
-        <div>{data} {dataa}</div>
+        <div>one</div>
     )
 }
 

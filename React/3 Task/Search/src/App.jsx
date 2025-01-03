@@ -27,8 +27,8 @@ const App = () => {
   ];
 
 
-  const filteredPeople = people.filter(person =>
-    person.name.toLowerCase().startsWith(searchTerm.toLowerCase())
+  const filteredPeople = people.filter((person) =>
+    person.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
