@@ -1,7 +1,11 @@
 import { data } from 'autoprefixer'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { AuthContext } from '../../context/AuthProvider'
+
 
 const CreateTask = () => {
+
+    const [userData, setUserData] = useContext(AuthContext)
 
     const [taskTitle, setTaskTitle] = useState("")
     const [taskDescription, setTaskDescription] = useState("")
@@ -14,24 +18,27 @@ const CreateTask = () => {
         e.preventDefault();
 
         setNewTask({ taskTitle, taskDescription, taskDate, category, active: false, newTask: true, failed: true, completed: false })
-        const data = JSON.parse(localStorage.getItem('employees'))
+        const data = userData
 
-        data.forEach((elem) =>{
-            if(asignTo == elem.firstName){
+
+        data.forEach((elem) => {
+            if (asignTo == elem.firstName) {
                 elem.tasks.push(newtask)
-                
+
+
             }
         })
-        localStorage.setItem('employees',JSON.stringify(data))
-        
+        setUserData(data);
+
+
         setAsignTo("")
         setCategory("")
         setTaskDate("")
         setTaskDescription("")
         setTaskTitle("")
     }
-    
-    
+
+
 
     return (
         <div className='p-5 bg-zinc-900 mt-7 rounded'>

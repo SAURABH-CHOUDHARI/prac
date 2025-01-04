@@ -8,7 +8,7 @@ const Header = ({changeUser}) => {
     // if(){
     //     setUserName("Admin")
     // }else{
-    //     setUserName("")
+    //     setUserName(userName)
     // }
 
 
