@@ -8,8 +8,11 @@ const productSlice = createSlice({
     initialState,
     reducers: {
         add: (state,action) => {
-            state.products.push(action.payload);
+            state.products = action.payload;
         },
+        remove: (state,action) => {
+            state.products.pop()
+        }
     }
 
     
@@ -18,4 +21,4 @@ const productSlice = createSlice({
 
 
 export default productSlice.reducer;
-export const { add } = productSlice.actions;
+export const { add ,remove } = productSlice.actions;

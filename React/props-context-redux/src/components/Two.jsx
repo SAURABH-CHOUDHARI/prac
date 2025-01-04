@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { add } from '../store/reducers/ProductSlice'
+import { add ,asyncremove } from '../store/actions/ProductActions'
 
 
 const Two = () => {
@@ -16,11 +16,15 @@ const Two = () => {
 
         dispatch(add(num));
     }
+    const removeHandler = () => {
+        dispatch(asyncremove());
+    }
 
     return (
         <div>
             <h1>two</h1>
             <button onClick={addData}>Add</button>
+            <button onClick={removeHandler}>Remove</button>
         </div>
     )
 }
