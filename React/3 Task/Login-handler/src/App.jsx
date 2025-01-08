@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState } from 'react'
 
 const App = () => {
@@ -10,7 +9,6 @@ const App = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
 
     if (password.length < 8 && name.length < 3) {
       alert(`enter valid name`);
@@ -41,7 +39,6 @@ const App = () => {
       }
     }
 
-
   }
 
 
@@ -49,13 +46,21 @@ const App = () => {
 
 
     <div className='h-screen w-screen flex items-center justify-between bg-black'>
-      <div className='  mx-auto border-2 border-slate-800 '>
+      <div className='  mx-auto border-2 border-slate-800  w-96'>
         <form className='flex flex-col gap-5 px-10 py-10' onSubmit={submitHandler} >
-          <input required type="text" placeholder='Enter Your Name' onChange={(e) => { setName(e.target.value) }} value={name} />
-          <input required type="email" placeholder='Enter your Email' onChange={(e) => { setEmail(e.target.value) }} value={email} />
-          <input required type="password" placeholder='Enter your Password' onChange={(e) => { setPassword(e.target.value) }} value={password} className='focus:'/>
-          <input required type="password" placeholder='Enter your PassWord Again' onChange={(e) => { setCheckPass(e.target.value) }} value={checkPass} className={`${notValid ? 'focus:outline-red-600' :  'focus:outline-zinc-800'}  `}  />
-          <button className='bg-slate-900 hover:bg-slate-500 duration-500 active:scale-95 text-white py-2 rounded'>Register</button>
+          <input required type="text" placeholder='Enter Your Name' onChange={(e) => { setName(e.target.value) }} value={name} 
+          className='py-2 px-2 w-full rounded bg-gray-700 font-bold'
+          />
+          <input required type="email" placeholder='Enter your Email' onChange={(e) => { setEmail(e.target.value) }} value={email} 
+          className='py-2 px-2 w-full rounded bg-gray-700 font-bold'
+          />
+          <input required type="password" placeholder='Enter your Password' onChange={(e) => { setPassword(e.target.value) }} value={password} className='focus:'
+          className='py-2 px-2 w-full rounded bg-gray-700 font-bold'
+          />
+          <input required type="password" placeholder='Re-Enter Password' onChange={(e) => { setCheckPass(e.target.value) }} value={checkPass} className={`${notValid ? 'focus:outline-red-600' :  'focus:outline-zinc-800'}  `}  
+          className='py-2 px-2 w-full rounded bg-gray-700 font-bold'
+          />
+          <button className='bg-slate-900 hover:bg-green-950 duration-500 active:scale-95 rounded text-white py-2 rounded'>Register</button>
         </form>
       </div>
     </div>
